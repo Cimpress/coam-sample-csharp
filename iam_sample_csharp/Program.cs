@@ -8,7 +8,7 @@ namespace iam_sample_csharp
 	    public static void Main()
 		{
 			// Get a token from Auth0 that will be used to call IAM
-			var fetcher = new Auth0TokenFetcher("{YOUR CLIENT ID HERE}", "{YOUR CLIENT SECRET}");
+			var fetcher = new Auth0TokenFetcher("{YOUR CLIENT ID HERE}", "{YOUR CLIENT SECRET HERE}");
 			var iamToken = fetcher.GetToken();
 
 			// Make a request to IAM for permissions
@@ -25,6 +25,7 @@ namespace iam_sample_csharp
 			request.AddUrlSegment("sub", sub);
 			request.AddUrlSegment("resourceType", resourceType);
 
+			Console.WriteLine("Calling " + client.BaseUrl + "/" + request.Resource);
 			IRestResponse response = client.Execute(request);
 			Console.WriteLine(response.Content);
 
@@ -35,7 +36,7 @@ namespace iam_sample_csharp
 			request.AddUrlSegment("resourceType", resourceType);
 			request.AddUrlSegment("resourceIdentifier", merchant);
 
-
+			Console.WriteLine("Calling " + client.BaseUrl + "/" + request.Resource);
 			response = client.Execute(request);
 			Console.WriteLine(response.Content);
 		}
