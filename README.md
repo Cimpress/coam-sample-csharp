@@ -17,7 +17,7 @@ which you can create at https://developer.cimpress.io/clients/create if you need
 This will print the following output:
 
 ```
-Calling https://api.cimpress.io/auth/iam/v1/principals/{principal}/permissions/{resourceType}
+Calling https://api.cimpress.io/auth/access-management/v1/principals/{principal}/permissions/{resourceType}
 [
   {
     "identifier": "*",
@@ -31,7 +31,7 @@ Calling https://api.cimpress.io/auth/iam/v1/principals/{principal}/permissions/{
   }
 ]
 
-Calling https://api.cimpress.io/auth/iam/v0/principals/{principal}/permissions/{resourceType}/{resourceIdentifier}
+Calling https://api.cimpress.io/auth/access-management/v1/principals/{principal}/permissions/{resourceType}/{resourceIdentifier}
 {
   "identifier": "vistaprint",
   "permissions": [
