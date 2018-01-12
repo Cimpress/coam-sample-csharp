@@ -7,22 +7,21 @@ namespace iam_sample_csharp
 	{
 	    public static void Main()
 		{
-			// Get a token from Auth0 that will be used to call IAM
+			// Get a token from Auth0 that will be used to call COAM
 			var fetcher = new Auth0TokenFetcher("{YOUR CLIENT ID HERE}", "{YOUR CLIENT SECRET HERE}");
-			var iamToken = fetcher.GetToken();
+			var accessToken = fetcher.GetToken();
 
-			// Make a request to IAM for permissions
-			var sub = "adfs|jshu@cimpress.com"; // Most commonly the sub field of the JWT that your app accepts
+			// Make a request to COAM for permissions
+			var principal = "adfs|jdaviscooke@cimpress.com"; // Most commonly the principal field of the JWT that your app accepts
 			var resourceType = "merchants";
 			var merchant = "vistaprint";
 
-			var client = new RestClient("https://development.api.cimpress.io/iam/v0");
-			// var client = new RestClient("https://api.cimpress.io/auth/iam/v0"); // Production. Note the extra /auth path segment
+			var client = new RestClient("https://api.cimpress.io/auth/access-management/v1");
 
 			// USER PERMISSIONS FOR ALL MERCHANTS
-			var request = new RestRequest("user-permissions/{sub}/{resourceType}", Method.GET);
-			request.AddHeader("Authorization", "Bearer " + iamToken);
-			request.AddUrlSegment("sub", sub);
+			var request = new RestRequest("principals/{principal}/permissions/{resourceType}", Method.GET);
+			request.AddHeader("Authorization", "Bearer " + accessToken);
+			request.AddUrlSegment("principal", principal);
 			request.AddUrlSegment("resourceType", resourceType);
 
 			Console.WriteLine("Calling " + client.BaseUrl + "/" + request.Resource);
@@ -30,9 +29,9 @@ namespace iam_sample_csharp
 			Console.WriteLine(response.Content);
 
 			// USER PERMISSIONS FOR A SINGLE MERCHANT
-			request = new RestRequest("user-permissions/{sub}/{resourceType}/{resourceIdentifier}", Method.GET);
-			request.AddHeader("Authorization", "Bearer " + iamToken);
-			request.AddUrlSegment("sub", sub);
+			request = new RestRequest("peincipals/{principal}/permissions/{resourceType}/{resourceIdentifier}", Method.GET);
+			request.AddHeader("Authorization", "Bearer " + accessToken);
+			request.AddUrlSegment("principal", principal);
 			request.AddUrlSegment("resourceType", resourceType);
 			request.AddUrlSegment("resourceIdentifier", merchant);
 

@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{1E3131A9-CDA2-4892-8D2A-B366C440D8AF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>iam_sample_csharp</RootNamespace>
-    <AssemblyName>iam_sample_csharp</AssemblyName>
+    <RootNamespace>coam_sample_csharp</RootNamespace>
+    <AssemblyName>coam_sample_csharp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iam_sample_csharp", "iam_sample_csharp\iam_sample_csharp.csproj", "{1E3131A9-CDA2-4892-8D2A-B366C440D8AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coam_sample_csharp", "coam_sample_csharp\coam_sample_csharp.csproj", "{1E3131A9-CDA2-4892-8D2A-B366C440D8AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

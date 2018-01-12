@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace iam_sample_csharp
+namespace coam_sample_csharp
 {
 	public class Auth0TokenFetcher
 	{
@@ -15,12 +15,12 @@ namespace iam_sample_csharp
 
 		public string GetToken()
 		{
-			var client = new RestClient("https://cimpress-dev.auth0.com");
+			var client = new RestClient("https://cimpress.auth0.com");
 
 			var request = new RestRequest("oauth/token", Method.POST);
 			request.AddParameter("client_id", this.clientId); 
 			request.AddParameter("client_secret", this.clientSecret);
-			request.AddParameter("audience", "https://development.api.cimpress.io/");
+			request.AddParameter("audience", "https://api.cimpress.io/");
 			request.AddParameter("grant_type", "client_credentials");
 
 			IRestResponse response = client.Execute(request);

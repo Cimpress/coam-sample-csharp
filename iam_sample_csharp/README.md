@@ -1,5 +1,5 @@
 ﻿using System;
-namespace iam_sample_csharp
+namespace coam_sample_csharp
 {
 	public class README
 	{
